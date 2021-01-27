@@ -18,7 +18,7 @@ import {colors} from '../../../utils';
 import {API_URL} from '@env';
 
 const HomeScreen = ({navigation}) => {
-  // const BASE_URL = process.env.BASE_URL;
+  // const BASE_URL = 'http://192.168.1.2:9005';
   const [card, setCard] = useState([]);
   const [cardTwo, setCardTwo] = useState([]);
 

@@ -14,7 +14,7 @@ import {
 import {API_URL} from '@env';
 
 const ShopScreen = ({navigation}) => {
-  // const BASE_URL = 'http://192.168.1.10:2005';
+  // const BASE_URL = 'http://192.168.1.2:9005';
   const [category, setCategory] = useState([]);
 
   useEffect(() => {

@@ -211,7 +211,7 @@ const BagScreen = ({
                     <View
                       style={{
                         marginTop: 30,
-                        marginLeft: 80,
+                        marginLeft: 60,
                         paddingBottom: 30,
                       }}>
                       <Text>{`Rp${(item.prc * item.qty).toLocaleString(

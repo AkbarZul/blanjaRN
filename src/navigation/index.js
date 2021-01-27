@@ -509,7 +509,7 @@ const StackScreen = ({navigation}) => {
         name="Update Product"
         component={UpdateScreen}
         options={{
-          title: 'Update Shipping Address',
+          title: 'Update Product',
           headerTitleStyle: {
             fontWeight: 'bold',
           },

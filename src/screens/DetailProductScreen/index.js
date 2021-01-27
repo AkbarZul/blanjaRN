@@ -12,6 +12,7 @@ import {ButtonSubmit, Text} from '../../components';
 import {colors} from '../../utils';
 import {connect} from 'react-redux';
 import {addToCart} from '../../utils/redux/action/cartAction';
+// import {API_URL} from '@env';
 import {API_URL} from '@env';
 
 // const BASE_URL = 'http://192.168.1.10:2005';

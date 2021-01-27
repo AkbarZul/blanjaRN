@@ -6,6 +6,7 @@ import {Picker} from '@react-native-picker/picker';
 import FormInput from 'react-native-outline-input';
 import {useSelector} from 'react-redux';
 import axios from 'axios';
+// import {API_URL} from '@env';
 import {API_URL} from '@env';
 
 const UpdateShippingAddress = ({navigation, route}) => {
@@ -100,8 +101,8 @@ const UpdateShippingAddress = ({navigation, route}) => {
       </View>
       <View style={styles.input}>
         <FormInput
-          value={state}
-          onChangeText={(state) => setState(state)}
+          value={region}
+          onChangeText={(region) => setRegion(region)}
           label="State/Province/Region"
           passiveBorderColor="white"
           activeBorderColor="black"

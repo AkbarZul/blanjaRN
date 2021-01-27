@@ -10,6 +10,7 @@ import {
 import Icon from 'react-native-vector-icons/EvilIcons';
 import Text from '../../../components/Text';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+// import {API_URL} from '@env';
 import {API_URL} from '@env';
 import axios from 'axios';
 import {useSelector} from 'react-redux';
@@ -101,7 +102,7 @@ const ShippingAddress = ({navigation, route}) => {
                       </TouchableOpacity>
                     </View>
                     <Text
-                      children={`${address}, ${city}, ${state}, ${zip_code}, ${country}`}
+                      children={`${address}, ${city}, ${region}, ${zip_code}, ${country}`}
                       size={17}
                       type="Medium"
                       style={styles.address}

@@ -19,6 +19,7 @@ import FormInput from 'react-native-outline-input';
 import {useSelector} from 'react-redux';
 import axios from 'axios';
 import {Picker} from '@react-native-picker/picker';
+// import {API_URL} from '@env';
 import {API_URL} from '@env';
 // import ImagePicker from 'react-native-image-picker';
 // import ImagePicker from 'react-native-image-crop-picker';
