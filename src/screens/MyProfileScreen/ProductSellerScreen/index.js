@@ -52,19 +52,39 @@ const ProductSeller = ({navigation, route}) => {
       });
   };
 
-  const handleDelete = async (id) => {
-    await axios
-      .delete(API_URL + '/products/' + id, {
-        headers: {
-          'x-access-token': 'Bearer ' + token,
+  const deleteProduct = (id) => {
+    Alert.alert(
+      'Delete Product',
+      'Are Sure Want Delete ?',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => {
+            return console.log('Cancel Pressed');
+          },
+          style: 'cancel',
         },
-      })
-      .then((res) => {
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err.response.data);
-      });
+        {
+          text: 'OK',
+          onPress: async () => {
+            const config = {
+              headers: {
+                'x-access-token': 'Bearer ' + token,
+              },
+            };
+            await axios
+              .delete(`${API_URL}/products/${id}`, config)
+              .then((res) => console.log(res.data))
+              .catch((err) => {
+                console.log(err);
+              });
+            console.log('klick delete OK' + id);
+            getProduct();
+          },
+        },
+      ],
+      {cancelable: true},
+    );
   };
 
   return (
@@ -111,7 +131,9 @@ const ProductSeller = ({navigation, route}) => {
                   alignItems: 'center',
                   marginTop: 10,
                 }}
-                onPress={handleDelete}>
+                onPress={() => {
+                  deleteProduct(item.id);
+                }}>
                 <Text style={{color: 'white'}}>delete</Text>
               </TouchableOpacity>
             </View>
