@@ -314,6 +314,8 @@ import Iconnn from 'react-native-vector-icons/EvilIcons';
 // redux
 import {useSelector} from 'react-redux';
 
+import {SocketProvider} from '../utils/Context/index';
+
 import {
   HomeScreen,
   BagScreen,
@@ -343,6 +345,7 @@ import {
   ProductSellerScreen,
   UpdateAddressScreen,
   UpdateScreen,
+  ChatScreen,
 } from '../screens';
 
 import MainProfile from './Profile';
@@ -403,119 +406,128 @@ const MainProfileScreen = () => {
 
 const StackScreen = ({navigation}) => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        initialRouteName="Splash"
-        name="Splash"
-        component={SplashScreen}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Main"
-        component={MainScreenView}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Login"
-        component={LoginScreen}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Register"
-        component={RegisterScreen}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Cataloge"
-        component={CatalogeScreen}
-        options={({navigation}) => ({
-          headerRight: () => (
-            <TouchableOpacity
-              style={{marginHorizontal: 10}}
-              onPress={() => navigation.navigate('Search')}>
-              <Iconnn name="search" color={colors.black} size={30} />
-            </TouchableOpacity>
-          ),
-        })}
-      />
-      <Stack.Screen name="Catalog" component={MainCatalogScreen} />
-      <Stack.Screen
-        name="Success"
-        component={SuccessScreen}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="CheckOut"
-        component={CheckOutScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="Search"
-        component={SearchScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="Filter"
-        component={FilterScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="DetailProduct"
-        component={DetailProductScreen}
-        options={({route}) => ({
-          title: route.params.categories,
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        })}
-      />
-      <Stack.Screen
-        name="Notification"
-        component={NotificationScreen}
-        options={{
-          title: 'Notification',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
-      <Stack.Screen
-        name="Adding Shipping Address"
-        component={AddingShippingAddressScreen}
-        options={{
-          title: 'Adding Shipping Address',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
-      <Stack.Screen
-        name="Update Shipping Address"
-        component={UpdateAddressScreen}
-        options={{
-          title: 'Update Shipping Address',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
-      <Stack.Screen
-        name="Update Product"
-        component={UpdateScreen}
-        options={{
-          title: 'Update Product',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
-    </Stack.Navigator>
+    <SocketProvider>
+      <Stack.Navigator>
+        <Stack.Screen
+          initialRouteName="Splash"
+          name="Splash"
+          component={SplashScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Main"
+          component={MainScreenView}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Login"
+          component={LoginScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Register"
+          component={RegisterScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Cataloge"
+          component={CatalogeScreen}
+          options={({navigation}) => ({
+            headerRight: () => (
+              <TouchableOpacity
+                style={{marginHorizontal: 10}}
+                onPress={() => navigation.navigate('Search')}>
+                <Iconnn name="search" color={colors.black} size={30} />
+              </TouchableOpacity>
+            ),
+          })}
+        />
+        <Stack.Screen name="Catalog" component={MainCatalogScreen} />
+        <Stack.Screen
+          name="Success"
+          component={SuccessScreen}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="CheckOut"
+          component={CheckOutScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Search"
+          component={SearchScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Filter"
+          component={FilterScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="DetailProduct"
+          component={DetailProductScreen}
+          options={({route}) => ({
+            title: route.params.categories,
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          })}
+        />
+        <Stack.Screen
+          name="Notification"
+          component={NotificationScreen}
+          options={{
+            title: 'Notification',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Adding Shipping Address"
+          component={AddingShippingAddressScreen}
+          options={{
+            title: 'Adding Shipping Address',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Update Shipping Address"
+          component={UpdateAddressScreen}
+          options={{
+            title: 'Update Shipping Address',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Update Product"
+          component={UpdateScreen}
+          options={{
+            title: 'Update Product',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Chat"
+          component={ChatScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
+    </SocketProvider>
   );
 };
 
