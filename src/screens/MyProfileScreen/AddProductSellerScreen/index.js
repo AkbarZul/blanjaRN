@@ -218,7 +218,7 @@ const AddProduct = ({navigation}) => {
       </ScrollView>
       <View style={{flexDirection: 'row'}}>
         <TouchableOpacity onPress={pickCamera} style={styles.button}>
-          <Text style={styles.text}>Select Multiple</Text>
+          <Text style={styles.text}>ADD PHOTO</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.input}>

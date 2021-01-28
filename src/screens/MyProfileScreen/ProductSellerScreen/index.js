@@ -79,7 +79,7 @@ const ProductSeller = ({navigation, route}) => {
                 console.log(err);
               });
             console.log('klick delete OK' + id);
-            getProduct();
+            getProductsSeller();
           },
         },
       ],
